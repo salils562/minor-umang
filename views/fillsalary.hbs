@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fill Salary</title>
+    <style>
+        .cnf-con{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: space-around;
+        }
+        .items{
+           margin-bottom: 10px;
+           margin-top: 10px;
+        }
+        input{
+            height: 40px;
+            width: 450px;
+        }
+        .calculated-details{
+            margin-left: 5rem;
+            margin-bottom: 5rem;
+            border:2px solid black;
+            border-radius: 5px;
+            padding: 20px;
+            width: 30rem;
+        }
+        
+    </style>
+    {{>bootstrapcss}}
+</head>
+<body>
+    {{>Navbar}}
+    <div class="container text-center mt-3">
+        <h1>Fill Details of Employee</h1>
+        <div class="container cnf-con" id="cnf-count">
+          <div class="items">
+          <input type="text" placeholder="Enter employee name" required>
+          </div>
+          <div class="items">
+          <input type="number" placeholder="Enter employee id" required>
+          </div>
+          <div class="items">
+           <input type="text" placeholder="Enter his/her department" required>
+          </div>
+          <div class="items">
+           <input type="text" placeholder="Enter his/her designation" required>
+          </div>
+          <div class="items">
+           <input type="text" placeholder="Enter Company name" required>
+          </div>
+          <div class="items">
+            <button class="btn btn-primary" id="submit-emp-data">Confirm Details</button>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="items">
+            <input type="number" placeholder="Enter the basic salary of employee (in Rs)" id="emp-salary">
+            <button id="calc-salary">Calculate</button>
+        </div>
+    </div>
+    <div class="calculated-details" id="hhh">
+        <p>HRA (10% of basic salary): Rs <span id="hra"></span></p>
+        <p>DA (42% of basic salary): Rs <span id="da"></span></p>
+        <p>cpf (6.5% of basic salary): Rs <span id="cpf"></span></p>
+        <p>gis and pt : Rs 200</p>
+        <p>Income tax (9% of total salary): Rs <span id="it"></span></p>
+        <p style="font-weight: bold;font-size:1.2rem;">Total salary : Rs <span id="total_sal"></span></p>
+        <p style="font-weight: bold;font-size:1.2rem;">Net Salary Calculated: Rs <span id="net_sal"></span></p>
+        <button id="post-data" class="btn btn-primary">Post Data</button>
+    </div>
+</body>
+{{>bootjs}}
+<script src="javascript/fillsalary.js"></script>
+</html>
