@@ -97,6 +97,7 @@ document.getElementById('submit-emp-data').addEventListener('click', () => {
             employeedesig:emp_designation,
             employeecmp:emp_company
         }
+        calcSalary.disabled=false;
         document.getElementById('submit-emp-data').className='btn btn-success';
     }
 });

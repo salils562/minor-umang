@@ -34,6 +34,7 @@
 </head>
 <body>
     {{>Navbar}}
+    <p style="font-weight:bold;border:2px solid black; display:inline-block; padding:3px; float:right; margin-right:30px;cursor:pointer; border-radius:2px;" id="logout"><a href="/" style="text-decoration:none;">Logout</a></p>
     <div class="container text-center mt-3">
         <h1>Fill Details of Employee</h1>
         <div class="container cnf-con" id="cnf-count">
@@ -60,7 +61,7 @@
     <div class="container">
         <div class="items">
             <input type="number" placeholder="Enter the basic salary of employee (in Rs)" id="emp-salary">
-            <button id="calc-salary">Calculate</button>
+            <button id="calc-salary" disabled>Calculate</button>
         </div>
     </div>
     <div class="calculated-details" id="hhh">

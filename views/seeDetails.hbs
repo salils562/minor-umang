@@ -4,8 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details</title>
+    {{>bootstrapcss}}
+    <style>
+        body{
+            background-color: rgba(123, 174, 157, 0.74);
+        }
+        #employees{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .item{
+            width: 60%;
+            height: 70px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .items{
+            margin: auto;
+        }
+        span{
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-    
+    {{>Navbar}}
+    <div class="container text-center mt-2">
+        <h3>See Employee Details</h3>
+    </div>
+    <div class="container mt-5" id="employees"></div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Payslip</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="firstitem text-center m-3">
+        <p style="font-weight:bold; margin:0px;">Pay Slip</p>
+        <p style="font-weight:bold; margin:0px;" id="date"></p>
+        </div>
+         <div class="seconditem d-flex justify-content-between">
+            <div class="it-1">
+                <p>Employee name: <span id="emp_name" class="text-capitalize"></span></p>
+                <p>Department: <span id="emp_dept"></span></p>
+                <p>Bankname: <span id="emp_bank"></span></p>
+            </div>
+            <div class="it-2">
+                <p>Employee id: <span id="emp_id"></span></p>
+                <p>Designation: <span id="emp_design"></span></p>
+            </div>
+         </div>
+         <div class="thirditem">
+            <table class="table table-dark table-striped">
+ <thead>
+    <tr>
+      <th scope="col">Earnings</th>
+      <th scope="col">regular</th>
+      <th scope="col">Deductions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Basic</td>
+      <td id="emp_basic">0</td>
+      <td>Income-Tax: <span id="it"></span></td>
+    </tr>
+    <tr>
+      <td>DA</td>
+      <td id="emp_da">0</td>
+      <td>CPF: <span id="cpf"></span></td>
+    </tr>
+    <tr>
+      <td>HRA</td>
+      <td id="emp_hra">0</td>
+      <td>DIS & PT : 400</td>
+    </tr>
+    <tr>
+      <td colspan="2">Total <span id="emp_tot"></span></td>
+      <td>Net Salary: <span id="emp_net"></span></td>
+    </tr>
+  </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
+{{>bootjs}}
+<script src="javascript/seeDetails.js"></script>
 </html>

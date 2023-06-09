@@ -97,7 +97,9 @@ const employeeData=new mongoose.model("employeData",employeeSchema);
 router.get("/", (req, res) => {
     res.status(200).render("login");
 });
-
+router.get("/filldata",(req,res)=>{
+res.status(200).render("fillsalary");
+});
 router.get("/empdetail",(req,res)=>{
 res.status(200).render("seeDetails");
 });
